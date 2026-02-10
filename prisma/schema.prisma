@@ -15,5 +15,5 @@ model PastorRole {
   description String
   contact     String
   createdAt   DateTime @default(now())
-  expiresAt   DateTime
+  expiresAt   DateTime?
 }
