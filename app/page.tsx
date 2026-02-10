@@ -94,6 +94,31 @@ export default function Home() {
       </form>
 
       {message && <p style={{ marginTop: "20px" }}>{message}</p>}
+      <hr style={{ margin: "40px 0" }} />
+
+<h2>Open Pastor Roles</h2>
+
+{roles.length === 0 ? (
+  <p>No roles posted yet.</p>
+) : (
+  roles.map((role) => (
+    <div
+      key={role.id}
+      style={{
+        border: "1px solid #ccc",
+        padding: "15px",
+        marginBottom: "15px",
+        borderRadius: "8px",
+      }}
+    >
+      <h3>{role.churchName}</h3>
+      <p><strong>Location:</strong> {role.location}</p>
+      <p><strong>Role:</strong> {role.roleType}</p>
+      <p>{role.description}</p>
+      <p><strong>Contact:</strong> {role.contact}</p>
+    </div>
+  ))
+)}
     </main>
   );
 }
