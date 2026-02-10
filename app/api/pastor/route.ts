@@ -27,4 +27,18 @@ export async function POST(request: Request) {
     );
   }
 }
+export async function GET() {
+  try {
+    const roles = await prisma.pastorRole.findMany({
+      orderBy: { createdAt: "desc" }
+    });
+
+    return NextResponse.json(roles);
+  } catch (error) {
+    return NextResponse.json(
+      { error: "Failed to fetch roles" },
+      { status: 500 }
+    );
+  }
+}
 
