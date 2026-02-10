@@ -14,6 +14,7 @@ export async function POST(request: Request) {
         roleType: body.roleType,
         description: body.description,
         contact: body.contact,
+        expiresAt: null,
       },
     });
 
